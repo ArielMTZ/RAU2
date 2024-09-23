@@ -1,0 +1,40 @@
+<?php
+session_start();
+include('conexion_bd.php'); // Conexión a la base de datos
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $rol = $_POST['rol'];
+
+    $admin_code = $_POST['admin_code'];
+    $admin_code_correcto = "121205";
+
+    if ($rol === 'administrador' && $admin_code !== $admin_code_correcto) {
+        echo '
+        <script>
+            alert("Código de autorización incorrecto para registrarse como administrador.");
+            window.location = "../inicio-registro.php";
+        </script>
+        ';
+    } else {
+        $query = "INSERT INTO usuarios (nombre, email, password, rol) VALUES ('$nombre', '$email', '$password', '$rol')";
+        if (mysqli_query($conn, $query)) {
+            echo '
+                <script>
+                    alert("Registro exitoso. Ahora puedes iniciar sesión");
+                    window.location = "../inicio-registro.php";
+                </script>
+                ';
+        } else {
+            echo '
+                <script>
+                    alert("Error: ") . mysqli_error($conn);
+                    window.location = "../inicio-registro.php";
+                </script>
+                ';
+        }
+    }
+}
+?>

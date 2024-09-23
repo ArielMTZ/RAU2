@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.Contenedor{
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+}
+
+.Caja-trasera{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 128, 255, 0.5);
+}
+
+.Caja-trasera div{
+    margin: 100px 40px;
+    color: white;
+    transition: all 500ms;
+}
+
+.Caja-trasera div p,
+.Caja-trasera div button{
+    margin-top: 30px;
+}
+
+.Caja-trasera div h3{
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.Caja-trasera button{
+    padding: 10px 40px;
+    border: 2px solid white;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transform: all 300ms;
+}
+
+.Caja-trasera button:hover{
+    background: white;
+    color: #46A2FD;
+}
+
+/*Formularios*/
+.contenedor-loginregister{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+.contenedor-loginregister form{
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor-loginregister form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #46A2FD;
+}
+
+.contenedor-loginregister form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #f2f2f2;
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedor-loginregister form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    background: #46A2FD;
+}
+
+.formulario-login{
+    opacity: 1;
+    display: block;
+}
+
+.formulario-register{
+    display: none;
+}
+</style>
+
+<body>
+    <main>
+        <div class="Contenedor">
+            <div class="Caja-trasera">
+                <div class="Caja-trasera-login">
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <p>Inicia sesion para entrar en la página</p>
+                    <button id="btn-iniciarsesion">Dale click</button>
+                </div>
+
+                <div class="Caja-trasera-register">
+                    <h3>¿Aún no tienes una cuenta?</h3>
+                    <p>Regístrate para que puedas iniciar sesión</p>
+                    <button id="btn-registrarse">Dale click</button>
+                </div>
+            </div>
+            
+            <!-- Formmulario de login y register -->
+            <div class="contenedor-loginregister">
+
+                <!-- login -->
+                <form action="login.html" class="formulario-login">
+                    <h2>Iniciar Sesión</h2>
+                    <center>
+                    <button>Iniciar Sesión</button>
+                    </center>
+                </form>
+
+                <!-- Register -->
+                <form action="register.html" class="formulario-register">
+                    <h2>Regístrarse</h2>
+                    <center>
+                    <button>Regístrarse</button>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts2.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Registrar Vuelo</title>
+</head>
+<body>
+    <h1>Registrar Vuelo</h1>
+    <form id="registerFlightForm" method="post" action="regis_flight.php">
+        <label for="origin">Origen:</label>
+        <input type="text" id="origin" name="origin" required><br><br>
+        
+        <label for="destination">Destino:</label>
+        <input type="text" id="destination" name="destination" required><br><br>
+        
+        <label for="departure_date">Fecha de Salida:</label>
+        <input type="date" id="departure_date" name="departure_date" required><br><br>
+        
+        <label for="return_date">Fecha de Regreso:</label>
+        <input type="date" id="return_date" name="return_date"><br><br>
+        
+        <label for="price">Precio:</label>
+        <input type="number" step="0.01" id="price" name="price" required><br><br>
+        
+        <button type="submit">Registrar Vuelo</button>
+    </form>
+</body>
+</html>
+
